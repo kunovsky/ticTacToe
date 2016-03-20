@@ -1,0 +1,27 @@
+{
+  "extends": "eslint-config-airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "rules": {
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/jsx-no-bind": 0,
+    "react/jsx-indent-props": 0,
+    'react/jsx-closing-bracket-location': [0, 'line-aligned'],
+    "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
+    "arrow-body-style": [2, "always"],
+    "no-else-return": 0,
+    "comma-dangle": 0,
+    "indent": [0, 2, {"SwitchCase": 1}],
+    "block-scoped-var": 0,
+    "padded-blocks": 0
+  },
+  "plugins": [
+    "react"
+  ]
+}

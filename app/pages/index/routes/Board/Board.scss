@@ -1,0 +1,50 @@
+.board-component {
+  padding: 2rem;
+  .begin-game, .reset-game {
+    font-weight: bold;
+    border-radius: 0.4rem;
+  }
+  .current-player-title {
+    width: 22rem;
+    margin: 0rem auto 2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: $c-white;
+    background-color: $c-main-blue;
+  }
+  .board-square-component {
+    height: 10rem;
+    font-size: 5rem;
+    padding-top: 0.5rem;
+    color: $c-white;
+    background-color: $c-main-blue;
+    border: 0.4rem solid $c-white;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all .09s ease-in-out;
+    &:hover {
+      background-color: $c-main-blue-hover;
+      transform: scale(1.05);
+    }
+  }
+  .active-player-x, .active-player-o {
+    cursor: auto;
+    &:hover {
+      transform: none;
+    }
+  }
+  .active-player-x {
+    background-color: $c-main-green;
+    &:hover {
+      background-color: $c-main-green-hover;
+    }
+  }
+  .active-player-o {
+    background-color: $c-main-orange;
+    &:hover {
+      background-color: $c-main-orange-hover;
+    }
+  }
+}

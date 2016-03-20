@@ -1,0 +1,13 @@
+.app-header-component {
+  height: 4rem;
+  background-color: $c-main-blue;
+  padding-top: 1.1rem;
+  @media #{$medium-up} {
+    padding-top: 0.6rem;
+  }
+  .site-title {
+    color: $c-white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
