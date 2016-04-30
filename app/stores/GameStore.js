@@ -6,9 +6,12 @@ import { checkBoard, checkTie } from '../utils/checker';
 
 import {
   ON_CHANGE,
-  PLACE_MOVE,
-  RESET_BOARD
 } from '../constants/AppConstants';
+
+const actionMappings = {
+  PLACE_MOVE: '_placeMove',
+  RESET_BOARD: '_resetBoard'
+};
 
 class GameStore extends EventEmitter {
 
@@ -55,8 +58,8 @@ class GameStore extends EventEmitter {
     this._currentPlayerToken = this._currentPlayerToken === 'o' ? 'x' : 'o';
   }
 
-  _placeMove(location) {
-    this._board[parseInt(location, 10)] = this._currentPlayerToken;
+  _placeMove(action) {
+    this._board[parseInt(action.location, 10)] = this._currentPlayerToken;
     if (checkBoard(this._board)) {
       this._winner = true;
     }
@@ -78,14 +81,8 @@ class GameStore extends EventEmitter {
 const store = new GameStore();
 
 AppDispatcher.register((action) => {
-  switch (action.actionType) {
-    case PLACE_MOVE:
-      return store._placeMove(action.location);
-    case RESET_BOARD:
-      return store._resetBoard();
-    default:
-      return; //eslint-disable-line
-    }
+  let method = actionMappings[action.actionType];
+  store[method].call(store, action);
 });
 
 export default store;

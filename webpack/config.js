@@ -39,6 +39,12 @@ var config = {
   plugins: !(TEST || DEBUG) ? plugins: [],
   resolve: {
     extensions: ['', '.js', '.json', '.jsx']
+  },
+    externals: {
+    'cheerio': 'window',
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
   }
 };
 

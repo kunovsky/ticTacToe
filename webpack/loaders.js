@@ -61,11 +61,7 @@ var loaders = [
     loader: 'url-loader?limit=10000&minetype=application/font-woff'
   },
   {
-    test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-    loader: 'file-loader'
-  },
-  {
-    test: /\.jpe?g$|\.gif$|\.png$|\.ico|\.svg$|\.woff$|\.woff2$|\.eot$|\.ttf$/,
+    test: /\.jpe?g$|\.gif$|\.png$|\.ico|\.svg$|\.eot$|\.ttf$/,
     loader: fileLoader
   },
   {
